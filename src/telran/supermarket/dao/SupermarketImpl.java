@@ -47,13 +47,7 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public Iterable<Product> findByCategory(String category) {
-//        LinkedList<Product> res = new LinkedList<>();
-//        for (Product product : products) {
-//            if (product.getCategory().equals(category)) {
-//                res.add(product);
-//            }
-//
-//        }
+
         return findProductByPredicate(product -> product.getCategory().equals(category));
     }
 
@@ -93,7 +87,7 @@ public class SupermarketImpl implements SuperMarket {
     private Iterable<Product> findProductByPredicate(Predicate<Product> predicate) {
         ArrayList<Product> res = new ArrayList<>();
         for (Product product : products) {
-            if(predicate.test(product)) {
+            if (predicate.test(product)) {
                 res.add(product);
             }
         }

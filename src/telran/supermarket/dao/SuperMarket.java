@@ -17,9 +17,9 @@ public interface SuperMarket {
     Iterable<Product> findProductWithExpDate();
 
 
-
     int skuQuantity();
 
     void printProducts();
+
     void printProducts(Iterable<Product> products);
 }
