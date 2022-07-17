@@ -2,6 +2,7 @@ package telran.supermarket.dao;
 
 import telran.supermarket.model.Product;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.Predicate;
@@ -64,7 +65,8 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public Iterable<Product> findProductWithExpDate() {
-        return null;
+        LocalDate now = LocalDate.now();
+        return findProductByPredicate(product -> product.getExpDate().isBefore(now));
     }
 
     @Override
