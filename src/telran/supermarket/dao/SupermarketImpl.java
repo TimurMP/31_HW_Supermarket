@@ -17,7 +17,7 @@ public class SupermarketImpl implements SuperMarket {
     @Override
     public boolean addProduct(Product product) {
         //TODO: add additional checks
-        if (product==null ){
+        if (product == null) {
             return false;
         }
         products.add(product);
@@ -31,6 +31,11 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public Product findByBarCode(long barCode) {
+        for (Product product : products) {
+            if (product.getBarCode() == barCode) {
+                return product;
+            }
+        }
         return null;
     }
 
