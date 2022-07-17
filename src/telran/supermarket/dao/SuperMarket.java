@@ -21,6 +21,5 @@ public interface SuperMarket {
     int skuQuantity();
 
     void printProducts();
-
-
+    void printProducts(Iterable<Product> products);
 }

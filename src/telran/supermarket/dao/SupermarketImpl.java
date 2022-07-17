@@ -4,6 +4,7 @@ import telran.supermarket.model.Product;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 
 public class SupermarketImpl implements SuperMarket {
     Collection<Product> products;
@@ -17,7 +18,7 @@ public class SupermarketImpl implements SuperMarket {
     @Override
     public boolean addProduct(Product product) {
         //TODO: add additional checks
-        if (product == null || findByBarCode(product.getBarCode())!= null) {
+        if (product == null || findByBarCode(product.getBarCode()) != null) {
             return false;
         }
         products.add(product);
@@ -27,7 +28,7 @@ public class SupermarketImpl implements SuperMarket {
     @Override
     public Product removeProduct(long barCode) {
         Product victim = findByBarCode(barCode);
-        if (victim!=null){
+        if (victim != null) {
             products.remove(victim);
         }
         return victim;
@@ -45,7 +46,14 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public Iterable<Product> findByCategory(String category) {
-        return null;
+        LinkedList<Product> res = new LinkedList<>();
+        for (Product product : products) {
+            if (product.getCategory().equals(category)) {
+                res.add(product);
+            }
+
+        }
+        return res;
     }
 
     @Override
@@ -68,7 +76,13 @@ public class SupermarketImpl implements SuperMarket {
         for (Product product : products) {
             System.out.println(product);
         }
-
-
     }
-}
+
+    @Override
+    public void printProducts(Iterable<Product> products) {
+        for (Product product : products) {
+            System.out.println(product);
+        }
+
+
+    }}
