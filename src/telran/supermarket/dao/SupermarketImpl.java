@@ -16,7 +16,8 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public boolean addProduct(Product product) {
-        return false;
+        products.add(product);
+        return true;
     }
 
     @Override
@@ -47,5 +48,14 @@ public class SupermarketImpl implements SuperMarket {
     @Override
     public int skuQuantity() {
         return 0;
+    }
+
+    @Override
+    public void printProducts() {
+        for (Product product : products) {
+            System.out.println(product);
+        }
+
+
     }
 }
