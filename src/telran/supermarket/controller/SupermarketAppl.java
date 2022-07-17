@@ -23,6 +23,7 @@ public class SupermarketAppl {
         products[3] = new Product(123456710, "Product4", "CAT4", "BRAND4", 1,date.plus(4, ChronoUnit.DAYS) );
         products[4] = new Product(123456711, "Product5", "CAT5", "BRAND5", 1,date.plus(5, ChronoUnit.DAYS) );
 
+
         for (int i = 0; i < products.length; i++) {
             tivTaam.addProduct(products[i]);
         }
@@ -30,6 +31,8 @@ public class SupermarketAppl {
 
 
         tivTaam.printProducts();
+        System.out.print("Adding Null: ");
+        System.out.println(tivTaam.addProduct(null));
 
 
 
@@ -37,4 +40,6 @@ public class SupermarketAppl {
 
 
     }
+
+
 }

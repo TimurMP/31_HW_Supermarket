@@ -16,6 +16,10 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public boolean addProduct(Product product) {
+        //TODO: add additional checks
+        if (product==null ){
+            return false;
+        }
         products.add(product);
         return true;
     }
