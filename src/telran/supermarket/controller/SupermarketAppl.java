@@ -30,10 +30,19 @@ public class SupermarketAppl {
 
 
         tivTaam.printProducts();
-        System.out.print("Adding Null: ");
+        System.out.print("\nAdding Null: ");
         System.out.println(tivTaam.addProduct(null));
 
-        System.out.println("Find by Bar Code: " + tivTaam.findByBarCode(123456710));
+        System.out.println("\nFind by Bar Code: " + tivTaam.findByBarCode(123456710));
+
+
+        tivTaam.removeProduct(123456710);
+        System.out.println("\nAfter removal: ");
+        tivTaam.printProducts();
+
+        System.out.println("\nAdding existing product: " + tivTaam.addProduct(products[2]));
+
+
 
 
 
