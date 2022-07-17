@@ -58,6 +58,11 @@ public class SupermarketAppl {
         tivTaam.printProducts(tivTaam.findProductWithExpDate());
 
 
+        System.out.println("\nTotal Amount of Products: ");
+        System.out.println(tivTaam.skuQuantity());
+
+
+
 
 
 

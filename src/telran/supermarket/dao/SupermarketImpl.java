@@ -71,7 +71,7 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public int skuQuantity() {
-        return 0;
+        return products.size();
     }
 
     @Override
