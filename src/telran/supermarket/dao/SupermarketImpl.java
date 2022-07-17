@@ -10,7 +10,7 @@ public class SupermarketImpl implements SuperMarket {
 
     public SupermarketImpl() {
 //        this.products = products;
-        products = new ArrayList<>();
+        products = new ArrayList<Product>();
 
     }
 
