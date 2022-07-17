@@ -2,11 +2,17 @@ package telran.supermarket.dao;
 
 import telran.supermarket.model.Product;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class SupermarketImpl implements SuperMarket {
     Collection<Product> products;
 
+    public SupermarketImpl() {
+//        this.products = products;
+        products = new ArrayList<>();
+
+    }
 
     @Override
     public boolean addProduct(Product product) {
