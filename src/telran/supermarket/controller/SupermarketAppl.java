@@ -20,8 +20,8 @@ public class SupermarketAppl {
         products[0] = new Product(1234567, "Product1", "CAT1", "BRAND1", 1,date.plus(1, ChronoUnit.DAYS) );
         products[1] = new Product(12345678, "Product2", "CAT3", "BRAND2", 1,date.plus(2, ChronoUnit.DAYS) );
         products[2] = new Product(12345679, "Product3", "CAT3", "BRAND3", 1,date.plus(3, ChronoUnit.DAYS) );
-        products[3] = new Product(123456710, "Product4", "CAT4", "BRAND4", 1,date.plus(4, ChronoUnit.DAYS) );
-        products[4] = new Product(123456711, "Product5", "CAT5", "BRAND5", 1,date.plus(5, ChronoUnit.DAYS) );
+        products[3] = new Product(123456710, "Product4", "CAT4", "BRAND3", 1,date.plus(4, ChronoUnit.DAYS) );
+        products[4] = new Product(123456711, "Product5", "CAT5", "BRAND3", 1,date.plus(5, ChronoUnit.DAYS) );
 
 
         for (int i = 0; i < products.length; i++) {
@@ -46,6 +46,10 @@ public class SupermarketAppl {
 
         System.out.println("\nfindByCategory: ");
         tivTaam.printProducts(tivTaam.findByCategory("CAT3"));
+
+        System.out.println("\nfindByBrand: ");
+        tivTaam.printProducts(tivTaam.findByBrand("BRAND3"));
+
 
 
 

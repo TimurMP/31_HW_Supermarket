@@ -4,7 +4,7 @@ import telran.supermarket.model.Product;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.function.Predicate;
 
 public class SupermarketImpl implements SuperMarket {
     Collection<Product> products;
@@ -46,19 +46,20 @@ public class SupermarketImpl implements SuperMarket {
 
     @Override
     public Iterable<Product> findByCategory(String category) {
-        LinkedList<Product> res = new LinkedList<>();
-        for (Product product : products) {
-            if (product.getCategory().equals(category)) {
-                res.add(product);
-            }
-
-        }
-        return res;
+//        LinkedList<Product> res = new LinkedList<>();
+//        for (Product product : products) {
+//            if (product.getCategory().equals(category)) {
+//                res.add(product);
+//            }
+//
+//        }
+        return findProductByPredicate(product -> product.getCategory().equals(category));
     }
 
     @Override
     public Iterable<Product> findByBrand(String brand) {
-        return null;
+
+        return findProductByPredicate(product -> product.getBrand().equals(brand));
     }
 
     @Override
@@ -85,4 +86,16 @@ public class SupermarketImpl implements SuperMarket {
         }
 
 
-    }}
+    }
+
+    private Iterable<Product> findProductByPredicate(Predicate<Product> predicate) {
+        ArrayList<Product> res = new ArrayList<>();
+        for (Product product : products) {
+            if(predicate.test(product)) {
+                res.add(product);
+            }
+        }
+        return res;
+    }
+
+}
